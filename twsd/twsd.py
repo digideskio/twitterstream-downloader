@@ -145,7 +145,7 @@ class TwitterStreamCrawler(object):
             try:
                 LOGGER.info("Requesting stream: %s. Params: %s", url, data)
                 start_time = datetime.datetime.now()
-                stream = request_stream(url, data)
+                stream = self.request_stream(url, data)
                 for count, tweet in enumerate(stream):
                     if not count % 1000:
                         now = datetime.datetime.now()
